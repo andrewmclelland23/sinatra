@@ -1,2 +1,14 @@
-<h1>"My name is <%= @random_name %>"</h1>
-'<img src="http://bit.ly/1eze8aE" style="border: 3px dashed red" alt="cat image">'
+<h1>"My name is <%= @random_name %> and <%= @random_food %> "</h1>
+<img src="http://bit.ly/1eze8aE" style="border: 3px dashed red" alt="cat image">
+
+<% if @random_name == nil %>
+<form action="/cat-form" method="post">
+  Name:<br>
+  <input type = "text" name = "name">
+  <br>
+  Food:<br>
+  <input type = "text" name = "food">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<% end %>
